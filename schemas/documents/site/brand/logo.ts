@@ -8,14 +8,21 @@ export default defineType({
   icon: FaBuilding,
   fields: [
     defineField({
-      name: 'title',
-      title: 'Company Name',
-      type: 'string',
-    }),
-    defineField({
       name: 'image',
-      title: 'Image',
+      title: 'Company Logo',
       type: 'image',
+      description: 'Please use a 240px x 60px image for best results',
     }),
   ],
+  preview: {
+    select: {
+      image: 'image',
+    },
+    prepare({image}) {
+      return {
+        title: 'Company Logo',
+        media: image,
+      }
+    },
+  },
 })
