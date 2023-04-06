@@ -16,6 +16,7 @@ export default defineType({
       name: 'image',
       title: 'Image',
       type: 'image',
+      description: 'Testing - Currently not being used',
     }),
   ],
 })
