@@ -31,7 +31,7 @@ export const comptenciesPage = defineType({
     }),
     defineField({
       name: 'practiceArea',
-      title: 'Practice Area',
+      title: 'Practice Areas',
       type: 'array',
       of: [{type: 'practiceArea'}],
     }),

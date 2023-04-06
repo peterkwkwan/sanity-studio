@@ -1,12 +1,12 @@
 import {defineType, defineField} from 'sanity'
-import {DocumentIcon} from '@sanity/icons'
+import {RocketIcon} from '@sanity/icons'
 import {CustomOptions} from '../../../../types/fields'
 
 export default defineType({
   name: 'competencies',
   title: 'Competencies',
   type: 'document',
-  icon: DocumentIcon,
+  icon: RocketIcon,
   fields: [
     defineField({
       name: 'title',

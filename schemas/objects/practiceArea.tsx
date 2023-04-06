@@ -11,6 +11,11 @@ export default defineType({
       type: 'string',
     }),
     defineField({
+      name: 'color',
+      title: 'Color',
+      type: 'color',
+    }),
+    defineField({
       name: 'competencies',
       title: 'Competencies',
       type: 'array',
@@ -25,4 +30,24 @@ export default defineType({
       ],
     }),
   ],
+  preview: {
+    select: {
+      title: 'title',
+      primary: 'color',
+    },
+    prepare({title, primary}) {
+      return {
+        title,
+        media: (
+          <span
+            style={{
+              backgroundColor: primary.hex,
+              height: '100%',
+              width: '100%',
+            }}
+          />
+        ),
+      }
+    },
+  },
 })
