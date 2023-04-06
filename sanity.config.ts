@@ -12,7 +12,7 @@ import {Logo as WtwLogo} from './components/logo'
 
 export default defineConfig({
   name: 'default',
-  title: 'gold-rook',
+  title: 'sanity-studio-wtw',
 
   projectId: 'wdhfrvff',
   dataset: 'production',
