@@ -1,10 +1,14 @@
-import {defineConfig, isDev} from 'sanity'
+import {defineConfig} from 'sanity'
 import {visionTool} from '@sanity/vision'
+import {colorInput} from '@sanity/color-input'
+
 import {deskTool} from 'sanity/desk'
 import {schemaTypes} from './schemas'
-import {getStartedPlugin} from './plugins/sanity-plugin-tutorial'
+import CharacterCount from './components/characterCount'
 
-const devOnlyPlugins = [getStartedPlugin()]
+import {structure} from './desk/structure'
+import {defaultDocumentNode} from './desk/defaultDocumentNode'
+import {Logo as WtwLogo} from './components/logo'
 
 export default defineConfig({
   name: 'default',
@@ -13,10 +17,16 @@ export default defineConfig({
   projectId: 'wdhfrvff',
   dataset: 'production',
 
-  plugins: [deskTool(), visionTool(), ...(isDev ? devOnlyPlugins : [])],
+  plugins: [colorInput(), deskTool({structure, defaultDocumentNode}), visionTool()],
 
   schema: {
     types: schemaTypes,
   },
-})
 
+  form: {
+    components: {
+      input: CharacterCount,
+    },
+  },
+  studio: {components: {logo: WtwLogo}},
+})
