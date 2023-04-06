@@ -1,4 +1,4 @@
-import {defineType, defineField, StringOptions} from 'sanity'
+import {defineType, defineField} from 'sanity'
 import {DocumentIcon} from '@sanity/icons'
 import {CustomOptions} from '../../../../types/fields'
 

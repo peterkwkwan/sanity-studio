@@ -11,17 +11,17 @@ export const comptenciesPage = defineType({
       type: 'string',
       validation: (Rule) => Rule.min(3).max(32).required(),
     }),
-    defineField({
-      name: 'slug',
-      title: 'Slug',
-      type: 'slug',
-      description: 'Url of the page',
-      options: {
-        source: 'title',
-      },
-      // hidden: ({document}) => !!document?.title,
-      // readOnly: ({document}) => !!document?._id.startsWith('drafts.'),
-    }),
+    // defineField({
+    //   name: 'slug',
+    //   title: 'Slug',
+    //   type: 'slug',
+    //   description: 'Url of the page',
+    //   options: {
+    //     source: 'title',
+    //   },
+    // hidden: ({document}) => !!document?.title,
+    // readOnly: ({document}) => !!document?._id.startsWith('drafts.'),
+    // }),
     defineField({
       name: 'introduction',
       title: 'Introduction',
