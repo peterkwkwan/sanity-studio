@@ -16,6 +16,7 @@ export default defineType({
       name: 'secondaryColor',
       title: 'Secondary Color',
       type: 'color',
+      description: 'Testing - not being used currently',
     }),
   ],
   preview: {
