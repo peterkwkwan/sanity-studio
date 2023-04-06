@@ -3,7 +3,7 @@ import React from 'react'
 export const Logo = () => {
   return (
     <img
-      src="../assets/logo.svg"
+      src="/logo.svg"
       alt="WTW-logo"
       style={{
         width: '200px',
