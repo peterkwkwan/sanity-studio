@@ -1,4 +1,5 @@
 import {defineField, defineType} from 'sanity'
+import {CustomOptions} from '../../../../types/fields'
 
 export const comptenciesPage = defineType({
   name: 'competenciesPage',
@@ -10,6 +11,9 @@ export const comptenciesPage = defineType({
       title: 'Page Title',
       type: 'string',
       validation: (Rule) => Rule.min(3).max(32).required(),
+      options: {
+        showCount: true,
+      } as CustomOptions,
     }),
     // defineField({
     //   name: 'slug',
