@@ -5,13 +5,21 @@ export default function CharacterCount(props: InputProps) {
   if (props.schemaType?.options?.showCount) {
     // validation -> _rules - contains all validation rules
 
-    const validation: unknown[] = props.schemaType?.validation as any
+    const validation: any[] = props.schemaType?.validation as any
 
-    if (validation && validation[0]) {
-      const rules = (validation[0] as any)._rules
+    let maxCharCount
 
-      const maxCharCount = rules.find((rule: RuleSpec) => rule.flag === 'max').constraint
+    if (validation) {
+      validation.forEach(({_rules}) => {
+        _rules.find((rule: RuleSpec) => {
+          if (rule.flag === 'max') {
+            maxCharCount = rule.constraint
+          }
+        })
+      })
+    }
 
+    if (maxCharCount) {
       return (
         <Stack space={2}>
           {props.renderDefault(props)}
