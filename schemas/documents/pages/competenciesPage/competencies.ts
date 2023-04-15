@@ -1,6 +1,10 @@
 import {defineType, defineField} from 'sanity'
 import {RocketIcon} from '@sanity/icons'
 import {CustomOptions} from '../../../../types/fields'
+import {MAX_CHAR_COUNT_DESCRIPTION} from '../../../../constants/descriptions'
+
+const minCharCount = 3
+const maxCharCount = 24
 
 export default defineType({
   name: 'competencies',
@@ -13,11 +17,12 @@ export default defineType({
       title: 'Title',
       type: 'string',
       validation: (Rule) => [
-        Rule.min(3).required().error('Competency names must be at least 3 characters long.'),
-        Rule.max(24).error('Competency names must not exceed 24 characters'),
+        Rule.min(minCharCount),
+        Rule.max(maxCharCount).error(MAX_CHAR_COUNT_DESCRIPTION('Competency names', maxCharCount)),
+        Rule.required(),
       ],
       options: {
-        // showCount: false,
+        showCount: true,
       } as CustomOptions,
     }),
     defineField({

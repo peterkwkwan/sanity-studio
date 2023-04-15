@@ -1,5 +1,9 @@
 import {defineField, defineType} from 'sanity'
 import {CustomOptions} from '../../../../types/fields'
+import {MAX_CHAR_COUNT_DESCRIPTION} from '../../../../constants/descriptions'
+
+const minCharCount = 3
+const maxCharCount = 32
 
 export const comptenciesPage = defineType({
   name: 'competenciesPage',
@@ -10,22 +14,16 @@ export const comptenciesPage = defineType({
       name: 'pageTitle',
       title: 'Page Title',
       type: 'string',
-      validation: (Rule) => Rule.min(3).max(32).required(),
+      validation: (Rule) => [
+        Rule.min(minCharCount),
+        Rule.max(maxCharCount).error(MAX_CHAR_COUNT_DESCRIPTION('Page title', maxCharCount)),
+
+        Rule.required(),
+      ],
       options: {
         showCount: true,
       } as CustomOptions,
     }),
-    // defineField({
-    //   name: 'slug',
-    //   title: 'Slug',
-    //   type: 'slug',
-    //   description: 'Url of the page',
-    //   options: {
-    //     source: 'title',
-    //   },
-    // hidden: ({document}) => !!document?.title,
-    // readOnly: ({document}) => !!document?._id.startsWith('drafts.'),
-    // }),
     defineField({
       name: 'introduction',
       title: 'Introduction',
