@@ -1,7 +1,7 @@
 import type {StructureResolver} from 'sanity/desk'
 import {RocketIcon, DocumentsIcon} from '@sanity/icons'
 import {FaBuilding, FaPalette} from 'react-icons/fa'
-import {BsMenuButtonFill} from 'react-icons/bs'
+import {BsFillMenuButtonWideFill} from 'react-icons/bs'
 
 export const structure: StructureResolver = (S) =>
   S.list()
@@ -24,13 +24,7 @@ export const structure: StructureResolver = (S) =>
                       S.documentTypeListItem('brandColors').title('Colors').icon(FaPalette),
                     ])
                 ),
-              S.listItem()
-                .title('Navigation')
-                .child(
-                  S.list()
-                    .title('Menu')
-                    .items([S.documentTypeListItem('menu').title('Menu').icon(BsMenuButtonFill)])
-                ),
+              S.documentTypeListItem('menu').title('Menu').icon(BsFillMenuButtonWideFill),
             ])
         ),
       S.listItem()
