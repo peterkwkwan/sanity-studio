@@ -3,34 +3,33 @@ import {BsMenuButtonFill} from 'react-icons/bs'
 
 export default defineType({
   name: 'menu',
-  title: 'Menu',
+  title: 'Navigation menu',
   type: 'document',
   icon: BsMenuButtonFill,
   fields: [
     defineField({
-      name: 'home',
-      title: 'Home',
-      type: 'string',
-      description: 'Title of the "Home" button',
-      validation: (Rule) => Rule.required(),
-    }),
-    defineField({
-      name: 'menuItemOne',
-      title: 'Menu item one',
-      type: 'string',
-      validation: (Rule) => Rule.required(),
-    }),
-    defineField({
-      name: 'menuItemTwo',
-      title: 'Menu item two',
-      type: 'string',
-      validation: (Rule) => Rule.required(),
-    }),
-    defineField({
-      name: 'menuItemThree',
-      title: 'Menu item three',
-      type: 'string',
-      validation: (Rule) => Rule.required(),
+      name: 'menuOptions',
+      title: 'Menu Options',
+      type: 'array',
+      description:
+        'Note: you can reorder the list by dragging the dotted icon on the left of each option',
+      of: [{type: 'menuOption'}],
+      options: {
+        sortable: true,
+      },
+      validation: (Rule) => [
+        Rule.unique(),
+        Rule.max(10).warning(
+          'There are too many menu items. This may lead to unexpected UI behavior.'
+        ),
+      ],
     }),
   ],
+  preview: {
+    prepare() {
+      return {
+        title: 'Menu Options',
+      }
+    },
+  },
 })
