@@ -1,8 +1,8 @@
 import {defineType, defineField} from 'sanity'
 import {MdFormatListBulletedAdd} from 'react-icons/md'
-import {CustomOptions} from '../../types/fields'
-import {isAdministrator} from '../../utils'
-import {MAX_CHAR_COUNT_DESCRIPTION, SLUG_DESCRIPTION} from '../../constants/descriptions'
+import {MAX_CHAR_COUNT_DESCRIPTION, SLUG_DESCRIPTION} from '@/constants/descriptions'
+import {CustomOptions} from '@/types/fields'
+import {isAdministrator} from '@/utils'
 
 const maxCharCount = 32
 

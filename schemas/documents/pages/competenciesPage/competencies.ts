@@ -1,7 +1,7 @@
 import {defineType, defineField} from 'sanity'
 import {RocketIcon} from '@sanity/icons'
-import {CustomOptions} from '../../../../types/fields'
-import {MAX_CHAR_COUNT_DESCRIPTION} from '../../../../constants/descriptions'
+import {MAX_CHAR_COUNT_DESCRIPTION} from '@/constants/descriptions'
+import {CustomOptions} from '@/types/fields'
 
 const minCharCount = 3
 const maxCharCount = 24

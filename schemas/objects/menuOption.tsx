@@ -1,9 +1,9 @@
 import {defineType, defineField} from 'sanity'
 import {BsFillMenuAppFill} from 'react-icons/bs'
 
-import {CustomOptions} from '../../types/fields'
-import {isAdministrator} from '../../utils'
-import {MAX_CHAR_COUNT_DESCRIPTION, SLUG_DESCRIPTION} from '../../constants/descriptions'
+import {MAX_CHAR_COUNT_DESCRIPTION, SLUG_DESCRIPTION} from '@/constants/descriptions'
+import {isAdministrator} from '@/utils'
+import {CustomOptions} from '@/types/fields'
 
 const maxCharCount = 32
 
