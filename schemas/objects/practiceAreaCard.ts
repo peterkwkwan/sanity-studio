@@ -38,6 +38,11 @@ export default defineType({
       readOnly: ({currentUser}) => isAdministrator(currentUser),
     }),
     defineField({
+      name: 'color',
+      title: 'Color',
+      type: 'color',
+    }),
+    defineField({
       name: 'image',
       title: 'Practice Area Icon',
       type: 'image',
