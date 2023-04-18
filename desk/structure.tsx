@@ -2,6 +2,7 @@ import type {StructureResolver} from 'sanity/desk'
 import {RocketIcon, DocumentsIcon} from '@sanity/icons'
 import {FaBuilding, FaPalette} from 'react-icons/fa'
 import {BsFillMenuButtonWideFill} from 'react-icons/bs'
+import {AiOutlineHome} from 'react-icons/ai'
 
 export const structure: StructureResolver = (S) =>
   S.list()
@@ -33,6 +34,7 @@ export const structure: StructureResolver = (S) =>
           S.list()
             .title('Pages')
             .items([
+              S.documentTypeListItem('homePage').title('Home').icon(AiOutlineHome),
               S.listItem()
                 .title('Competencies Page')
                 .child(

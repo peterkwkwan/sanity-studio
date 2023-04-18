@@ -18,7 +18,6 @@ export const comptenciesPage = defineType({
       validation: (Rule) => [
         Rule.min(minCharCount),
         Rule.max(maxCharCount).error(MAX_CHAR_COUNT_DESCRIPTION('Page title', maxCharCount)),
-
         Rule.required(),
       ],
       options: {
@@ -31,6 +30,7 @@ export const comptenciesPage = defineType({
       description: 'Introduction to the competencies page',
       type: 'array', // multi-line text,
       of: [{type: 'block'}],
+      validation: (Rule) => [Rule.required()],
     }),
     defineField({
       name: 'practiceArea',

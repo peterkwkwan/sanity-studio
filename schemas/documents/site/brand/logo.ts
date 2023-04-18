@@ -1,5 +1,6 @@
 import {defineType, defineField} from 'sanity'
 import {FaBuilding} from 'react-icons/fa'
+import {IMAGE_SIZE_DESCRIPTION} from '@/constants/descriptions'
 
 export default defineType({
   name: 'brandLogo',
@@ -11,7 +12,7 @@ export default defineType({
       name: 'image',
       title: 'Company Logo',
       type: 'image',
-      description: 'Please use a 240px x 60px image for best results',
+      description: IMAGE_SIZE_DESCRIPTION({height: 240, width: 60}),
     }),
   ],
   preview: {

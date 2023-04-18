@@ -1,5 +1,6 @@
-import {comptenciesPage} from './documents/pages/competenciesPage/competenciesPage'
-import competencies from './documents/pages/competenciesPage/competencies'
+import {homePage} from './documents/pages/home'
+import {comptenciesPage} from './documents/pages/w-r-competencies'
+import competencies from './documents/pages/w-r-competencies/competencies'
 
 import logo from './documents/site/brand/logo'
 import colors from './documents/site/brand/colors'
@@ -7,8 +8,10 @@ import menu from './documents/site/navigation/menu'
 import practiceArea from './objects/practiceArea'
 import menuOption from './objects/menuOption'
 import submenuOption from './objects/submenuOption'
+import practiceAreaCard from './objects/practiceAreaCard'
 
 export const schemaTypes = [
+  homePage,
   competencies,
   comptenciesPage,
   practiceArea,
@@ -17,4 +20,5 @@ export const schemaTypes = [
   menu,
   menuOption,
   submenuOption,
+  practiceAreaCard,
 ]
