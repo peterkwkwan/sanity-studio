@@ -5,6 +5,7 @@ import {CustomOptions} from '@/types/fields'
 
 const minCharCount = 3
 const maxCharCount = 32
+const maxMobileIntroCount = 50
 
 export const homePage = defineType({
   name: 'homePage',
@@ -25,6 +26,7 @@ export const homePage = defineType({
         showCount: true,
       } as CustomOptions,
     }),
+
     defineField({
       name: 'introduction',
       title: 'Introduction',
@@ -32,6 +34,21 @@ export const homePage = defineType({
       type: 'array', // multi-line text,
       of: [{type: 'block'}],
       validation: (Rule) => [Rule.required()],
+    }),
+    defineField({
+      name: 'mobileIntroduction',
+      title: 'Mobile Introduction',
+      description: 'Short intro that replaces the normal introduction in mobile mode',
+      type: 'string',
+      validation: (Rule) => [
+        Rule.required(),
+        Rule.max(maxMobileIntroCount).error(
+          MAX_CHAR_COUNT_DESCRIPTION('Mobile Introduction', maxMobileIntroCount)
+        ),
+      ],
+      options: {
+        showCount: true,
+      } as CustomOptions,
     }),
     defineField({
       name: 'practiceAreaCards',
