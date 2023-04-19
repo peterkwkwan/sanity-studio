@@ -46,7 +46,7 @@ export default defineType({
       name: 'image',
       title: 'Practice Area Icon',
       type: 'image',
-      description: IMAGE_SIZE_DESCRIPTION({height: 120, width: 100}),
+      description: IMAGE_SIZE_DESCRIPTION({width: 120, height: 100}),
     }),
   ],
 })

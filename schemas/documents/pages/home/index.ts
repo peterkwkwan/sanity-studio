@@ -43,13 +43,13 @@ export const homePage = defineType({
       name: 'desktopImage',
       title: 'Background image (desktop)',
       type: 'image',
-      description: IMAGE_SIZE_DESCRIPTION({height: 1600, width: 900}),
+      description: IMAGE_SIZE_DESCRIPTION({width: 1600, height: 900}),
     }),
     defineField({
       name: 'mobileImage',
       title: 'Background image (mobile)',
       type: 'image',
-      description: IMAGE_SIZE_DESCRIPTION({height: 900, width: 1600}),
+      description: IMAGE_SIZE_DESCRIPTION({width: 900, height: 1600}),
     }),
   ],
 })
