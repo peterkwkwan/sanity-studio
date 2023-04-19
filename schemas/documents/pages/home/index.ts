@@ -5,7 +5,7 @@ import {CustomOptions} from '@/types/fields'
 
 const minCharCount = 3
 const maxCharCount = 32
-const maxMobileIntroCount = 50
+const maxMobileIntroCount = 80
 
 export const homePage = defineType({
   name: 'homePage',
