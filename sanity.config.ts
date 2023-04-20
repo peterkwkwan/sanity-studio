@@ -11,9 +11,7 @@ import {Logo as WtwLogo} from '@/components/Logo'
 import CustomInput from '@/components/Input'
 import {isAdministrator} from '@/utils'
 import {StatusBadge} from '@/components/StatusBadge'
-const {theme} = (await import(
-  'https://themer.sanity.build/api/hues?preset=dew&primary=c130df;400'
-)) as {theme: import('sanity').StudioTheme}
+import {theme} from 'https://themer.sanity.build/api/hues?primary=bf39d0'
 
 export default defineConfig({
   name: 'default',
