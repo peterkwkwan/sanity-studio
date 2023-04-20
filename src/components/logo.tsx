@@ -4,7 +4,7 @@ export const Logo = () => {
   return (
     <img
       src="/logo.svg"
-      alt="WTW-logo"
+      alt="logo"
       style={{
         width: '200px',
         height: '100%',

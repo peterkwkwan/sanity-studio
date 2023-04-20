@@ -22,6 +22,9 @@ export default defineCliConfig({
         ...prevConfig.resolve?.alias,
         alias: [{find: '@', replacement: path.resolve(__dirname, './src')}],
       },
+      build: {
+        target: 'esnext',
+      },
     }
   },
 })
