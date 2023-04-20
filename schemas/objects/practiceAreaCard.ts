@@ -35,7 +35,7 @@ export default defineType({
       title: 'Slug',
       type: 'slug',
       description: SLUG_DESCRIPTION,
-      readOnly: ({currentUser}) => isAdministrator(currentUser),
+      readOnly: ({currentUser}) => !isAdministrator(currentUser),
     }),
     defineField({
       name: 'color',
