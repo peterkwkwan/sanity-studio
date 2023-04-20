@@ -7,7 +7,7 @@ import {FiPlay} from 'react-icons/fi'
 import {schemaTypes} from './schemas'
 import {structure} from './desk/structure'
 import {defaultDocumentNode} from './desk/defaultDocumentNode'
-import {Logo as WtwLogo} from '@/components/Logo'
+import {StudioLogo} from '@/components/StudioLogo'
 import CustomInput from '@/components/Input'
 import {isAdministrator} from '@/utils'
 import {StatusBadge} from '@/components/StatusBadge'
@@ -25,7 +25,7 @@ export default defineConfig({
     deskTool({structure, defaultDocumentNode}),
     visionTool({title: 'API Playground (Vision)', icon: FiPlay}),
   ],
-  studio: {components: {logo: WtwLogo}},
+  studio: {components: {logo: StudioLogo}},
 
   schema: {
     types: schemaTypes,

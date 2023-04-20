@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const Logo = () => {
+export const StudioLogo = () => {
   return (
     <img
       src="/logo.svg"
