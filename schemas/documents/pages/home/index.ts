@@ -26,7 +26,6 @@ export const homePage = defineType({
         showCount: true,
       } as CustomOptions,
     }),
-
     defineField({
       name: 'introduction',
       title: 'Introduction',
@@ -51,10 +50,10 @@ export const homePage = defineType({
       } as CustomOptions,
     }),
     defineField({
-      name: 'practiceAreaCards',
-      title: 'Practice Areas Cards',
+      name: 'jobFamilyCards',
+      title: 'Job Familys Cards',
       type: 'array',
-      of: [{type: 'practiceAreaCard'}],
+      of: [{type: 'jobFamilyCard'}],
     }),
     defineField({
       name: 'desktopImage',

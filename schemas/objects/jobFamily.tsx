@@ -1,8 +1,8 @@
 import {defineType, defineField} from 'sanity'
 
 export default defineType({
-  name: 'practiceArea',
-  title: 'Practice Area',
+  name: 'jobFamily',
+  title: 'Job Family',
   type: 'object',
   fields: [
     defineField({

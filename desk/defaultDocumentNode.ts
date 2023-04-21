@@ -20,7 +20,7 @@ export const defaultDocumentNode: DefaultDocumentNodeResolver = (S, {schemaType}
           })
           .title('Live Preview'),
       ])
-    // TO-DO: should render out all practice areas that are referenced by this competency
+    // TO-DO: should render out all Job Familys that are referenced by this competency
     // groq query needs to be tweaked? Not sure if possible
 
     // case `competencies`:
@@ -35,7 +35,7 @@ export const defaultDocumentNode: DefaultDocumentNodeResolver = (S, {schemaType}
     //         ]`,
     //         params: {id: `_id`},
     //       })
-    //       .title('Practice Area(s)'),
+    //       .title('Job Family(s)'),
     //   ])
     default:
       return S.document().views([S.view.form()])

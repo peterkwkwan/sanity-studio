@@ -12,8 +12,8 @@ import {CustomOptions} from '@/types/fields'
 const maxCharCount = 50
 
 export default defineType({
-  name: 'practiceAreaCard',
-  title: 'Practice Area Card',
+  name: 'jobFamilyCard',
+  title: 'Job Family Card',
   type: 'object',
   icon: BsFillMenuAppFill,
 
@@ -44,9 +44,10 @@ export default defineType({
     }),
     defineField({
       name: 'image',
-      title: 'Practice Area Icon',
+      title: 'Job Family Icon',
       type: 'image',
       description: IMAGE_SIZE_DESCRIPTION({width: 120, height: 100}),
+      validation: (Rule) => [Rule.required()],
     }),
   ],
 })

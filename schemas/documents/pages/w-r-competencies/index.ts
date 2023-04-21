@@ -33,10 +33,10 @@ export const comptenciesPage = defineType({
       validation: (Rule) => [Rule.required()],
     }),
     defineField({
-      name: 'practiceArea',
-      title: 'Practice Areas',
+      name: 'jobFamily',
+      title: 'Job Familys',
       type: 'array',
-      of: [{type: 'practiceArea'}],
+      of: [{type: 'jobFamily'}],
     }),
   ],
 })

@@ -4,21 +4,21 @@ import competencies from './documents/pages/w-r-competencies/competencies'
 
 import colors from './documents/site/brand/colors'
 import menu from './documents/site/navigation/menu'
-import practiceArea from './objects/practiceArea'
+import jobFamily from './objects/jobFamily'
 import menuOption from './objects/menuOption'
 import submenuOption from './objects/submenuOption'
-import practiceAreaCard from './objects/practiceAreaCard'
+import jobFamilyCard from './objects/jobFamilyCard'
 import Logo from './documents/site/brand/logo'
 
 export const schemaTypes = [
   homePage,
   competencies,
   comptenciesPage,
-  practiceArea,
+  jobFamily,
   Logo,
   colors,
   menu,
   menuOption,
   submenuOption,
-  practiceAreaCard,
+  jobFamilyCard,
 ]
