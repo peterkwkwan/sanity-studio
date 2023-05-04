@@ -33,10 +33,10 @@ export const comptenciesPage = defineType({
       validation: (Rule) => [Rule.required()],
     }),
     defineField({
-      name: 'jobFamily',
-      title: 'Job Familys',
+      name: 'jobFamilyCompetencies',
+      title: 'Job Family Competencies',
       type: 'array',
-      of: [{type: 'jobFamily'}],
+      of: [{type: 'jobFamilyCompetencies'}],
     }),
   ],
 })
