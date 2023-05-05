@@ -15,3 +15,5 @@ export const MAX_CHAR_COUNT_DESCRIPTION = (fieldName: string, maxCharCount: numb
 
 export const IMAGE_SIZE_DESCRIPTION = ({width, height}: {width: number; height: number}) => `
 Please use a ${width}px (width) x ${height}px (height) image for best results.`
+
+export const SELECT_ONE_DROPDOWN = `Select one option from the dropdown list`

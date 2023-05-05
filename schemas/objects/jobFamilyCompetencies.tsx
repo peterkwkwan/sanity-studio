@@ -1,3 +1,4 @@
+import {SELECT_ONE_DROPDOWN} from '@/constants/descriptions'
 import {defineType, defineField} from 'sanity'
 
 export default defineType({
@@ -8,17 +9,12 @@ export default defineType({
     defineField({
       name: 'jobFamilyGroup',
       title: 'Job Family Group',
-      type: 'array',
-      validation: (Rule) => [Rule.length(1)],
-      of: [
-        {
-          type: 'reference',
-          to: [{type: 'jobFamilyGroup'}],
-          options: {
-            disableNew: true,
-          },
-        },
-      ],
+      type: 'reference',
+      to: [{type: 'jobFamilyGroup'}],
+      description: SELECT_ONE_DROPDOWN,
+      options: {
+        disableNew: true,
+      },
     }),
     defineField({
       name: 'color',
@@ -42,7 +38,7 @@ export default defineType({
   ],
   preview: {
     select: {
-      title: 'jobFamilyGroup.0.name',
+      title: 'jobFamilyGroup.name',
       primary: 'color',
     },
     prepare({title, primary}) {

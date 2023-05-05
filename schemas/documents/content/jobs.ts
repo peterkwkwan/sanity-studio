@@ -1,7 +1,7 @@
 import {defineType, defineField} from 'sanity'
 import {RocketIcon} from '@sanity/icons'
 
-import {MAX_CHAR_COUNT_DESCRIPTION} from '@/constants/descriptions'
+import {MAX_CHAR_COUNT_DESCRIPTION, SELECT_ONE_DROPDOWN} from '@/constants/descriptions'
 import {CustomOptions} from '@/types/fields'
 
 const minCharCount = 3
@@ -29,32 +29,22 @@ export default defineType({
     defineField({
       name: 'jobFamilyGroup',
       title: 'Job Family Group',
-      type: 'array',
-      validation: (Rule) => [Rule.length(1).error('Jobs can only belong to 1 Job Family Group')],
-      of: [
-        {
-          type: 'reference',
-          to: [{type: 'jobFamilyGroup'}],
-          options: {
-            disableNew: true,
-          },
-        },
-      ],
+      type: 'reference',
+      to: [{type: 'jobFamilyGroup'}],
+      description: SELECT_ONE_DROPDOWN,
+      options: {
+        disableNew: true,
+      },
     }),
     defineField({
       name: 'jobFamily',
       title: 'Job Family',
-      type: 'array',
-      validation: (Rule) => [Rule.length(1).error('Jobs can only belong to 1 Job Family Group')],
-      of: [
-        {
-          type: 'reference',
-          to: [{type: 'jobFamily'}],
-          options: {
-            disableNew: true,
-          },
-        },
-      ],
+      type: 'reference',
+      to: [{type: 'jobFamily'}],
+      description: SELECT_ONE_DROPDOWN,
+      options: {
+        disableNew: true,
+      },
     }),
     defineField({
       name: 'level',
