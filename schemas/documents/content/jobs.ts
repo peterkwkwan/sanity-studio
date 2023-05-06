@@ -1,8 +1,13 @@
 import {defineType, defineField} from 'sanity'
 import {RocketIcon} from '@sanity/icons'
 
-import {MAX_CHAR_COUNT_DESCRIPTION, SELECT_ONE_DROPDOWN} from '@/constants/descriptions'
+import {
+  MAX_CHAR_COUNT_DESCRIPTION,
+  SELECT_ONE_DROPDOWN,
+  SLUG_DESCRIPTION,
+} from '@/constants/descriptions'
 import {CustomOptions} from '@/types/fields'
+import {isAdministrator} from '@/utils'
 
 const minCharCount = 3
 const maxCharCount = 50
@@ -25,6 +30,13 @@ export default defineType({
       options: {
         showCount: true,
       } as CustomOptions,
+    }),
+    defineField({
+      name: 'slug',
+      title: 'Slug',
+      type: 'slug',
+      description: SLUG_DESCRIPTION,
+      readOnly: ({currentUser}) => !isAdministrator(currentUser),
     }),
     defineField({
       name: 'jobFamilyGroup',

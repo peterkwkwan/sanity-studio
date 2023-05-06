@@ -27,5 +27,30 @@ export default defineType({
         showCount: true,
       } as CustomOptions,
     }),
+    defineField({
+      name: 'color',
+      title: 'Color',
+      type: 'color',
+    }),
   ],
+  preview: {
+    select: {
+      title: 'name',
+      primary: 'color',
+    },
+    prepare({title, primary}) {
+      return {
+        title,
+        media: (
+          <span
+            style={{
+              backgroundColor: primary?.hex,
+              height: '100%',
+              width: '100%',
+            }}
+          />
+        ),
+      }
+    },
+  },
 })

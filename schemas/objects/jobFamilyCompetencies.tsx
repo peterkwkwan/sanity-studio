@@ -17,11 +17,6 @@ export default defineType({
       },
     }),
     defineField({
-      name: 'color',
-      title: 'Color',
-      type: 'color',
-    }),
-    defineField({
       name: 'competencies',
       title: 'Competencies',
       type: 'array',
@@ -39,7 +34,7 @@ export default defineType({
   preview: {
     select: {
       title: 'jobFamilyGroup.name',
-      primary: 'color',
+      primary: 'jobFamilyGroup.color',
     },
     prepare({title, primary}) {
       return {

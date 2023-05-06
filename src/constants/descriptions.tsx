@@ -6,7 +6,7 @@ export const SLUG_DESCRIPTION = (
     <Box marginRight={1}>
       <CiWarning />
     </Box>
-    <span>WARNING: Only for developer use. URL of this menu option. </span>
+    <span>WARNING: Only for developer use</span>
   </Flex>
 )
 
