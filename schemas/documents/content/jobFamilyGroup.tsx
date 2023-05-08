@@ -1,7 +1,8 @@
 import {defineType, defineField} from 'sanity'
 import {HiUserGroup} from 'react-icons/hi'
-import {MAX_CHAR_COUNT_DESCRIPTION} from '@/constants/descriptions'
+import {MAX_CHAR_COUNT_DESCRIPTION, UNIQUE_DESCRIPTION} from '@/constants'
 import {CustomOptions} from '@/types/fields'
+import {isUniqueString} from '@/utils'
 
 const minCharCount = 3
 const maxCharCount = 32
@@ -22,6 +23,12 @@ export default defineType({
           MAX_CHAR_COUNT_DESCRIPTION('Job Family Group name', maxCharCount)
         ),
         Rule.required(),
+        Rule.custom(async (value = '', context) => {
+          const isUnique = await isUniqueString(value, context)
+          if (!isUnique)
+            return UNIQUE_DESCRIPTION({fieldName: 'Title', documentType: 'Job Family Group', value})
+          return true
+        }),
       ],
       options: {
         showCount: true,
