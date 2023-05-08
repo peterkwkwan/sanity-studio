@@ -1,7 +1,8 @@
 import {defineType, defineField} from 'sanity'
 import {RocketIcon} from '@sanity/icons'
-import {MAX_CHAR_COUNT_DESCRIPTION} from '@/constants/descriptions'
+import {MAX_CHAR_COUNT_DESCRIPTION, UNIQUE_DESCRIPTION} from '@/constants'
 import {CustomOptions} from '@/types/fields'
+import {isUniqueString} from '@/utils'
 
 const minCharCount = 3
 const maxCharCount = 24
@@ -20,11 +21,12 @@ export default defineType({
         Rule.min(minCharCount),
         Rule.max(maxCharCount).error(MAX_CHAR_COUNT_DESCRIPTION('Competency names', maxCharCount)),
         Rule.required(),
-        // Rule.custom(async (value, context) => {
-        //   const isUnique = await useIsUniqueString(value || '', context)
-        //   if (!isUnique) return 'Title is not unique'
-        //   return true
-        // }),
+        Rule.custom(async (value = '', context) => {
+          const isUnique = await isUniqueString(value, context)
+          if (!isUnique)
+            return UNIQUE_DESCRIPTION({fieldName: 'Title', documentType: 'Competency', value})
+          return true
+        }),
       ],
       options: {
         showCount: true,
