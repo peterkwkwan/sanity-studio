@@ -79,15 +79,13 @@ export default defineType({
       of: [{type: 'block'}],
     }),
     defineField({
-      name: 'competencies',
+      name: 'jobCompetencies',
       title: 'Competencies',
       type: 'array',
       description: 'Competencies for this job',
       of: [
         {
-          type: 'reference',
-          to: [{type: 'competencies'}],
-
+          type: 'businessSegmentCompetencies',
           options: {
             disableNew: true,
           },
