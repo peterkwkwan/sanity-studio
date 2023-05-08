@@ -1,6 +1,6 @@
 import {defineField, defineType} from 'sanity'
 
-import {IMAGE_SIZE_DESCRIPTION, MAX_CHAR_COUNT_DESCRIPTION} from '@/constants/descriptions'
+import {IMAGE_SIZE_DESCRIPTION, MAX_CHAR_COUNT_DESCRIPTION} from '@/constants'
 import {CustomOptions} from '@/types/fields'
 
 const minCharCount = 3

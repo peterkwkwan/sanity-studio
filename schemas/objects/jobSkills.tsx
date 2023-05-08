@@ -1,4 +1,4 @@
-import {SELECT_ONE_DROPDOWN} from '@/constants/descriptions'
+import {SELECT_ONE_DROPDOWN} from '@/constants'
 import {defineType, defineField} from 'sanity'
 import {GiSkills} from 'react-icons/gi'
 
@@ -37,12 +37,4 @@ export default defineType({
       ],
     }),
   ],
-  // preview: {
-  //   select: {
-  //     title: 'skillCategories',
-  //   },
-  //   prepare({title}) {
-  //     return {title}
-  //   },
-  // },
 })

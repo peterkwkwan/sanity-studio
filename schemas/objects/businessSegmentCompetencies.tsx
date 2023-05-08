@@ -1,4 +1,4 @@
-import {SELECT_ONE_DROPDOWN} from '@/constants/descriptions'
+import {SELECT_ONE_DROPDOWN} from '@/constants'
 import {defineType, defineField} from 'sanity'
 
 export default defineType({

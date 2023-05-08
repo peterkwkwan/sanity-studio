@@ -1,6 +1,6 @@
 import {defineType, defineField} from 'sanity'
 import {FaBuilding} from 'react-icons/fa'
-import {IMAGE_SIZE_DESCRIPTION} from '@/constants/descriptions'
+import {IMAGE_SIZE_DESCRIPTION} from '@/constants'
 
 export default defineType({
   name: 'brandLogo',

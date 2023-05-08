@@ -1,11 +1,6 @@
 import {defineType, defineField} from 'sanity'
-import {RocketIcon} from '@sanity/icons'
 
-import {
-  MAX_CHAR_COUNT_DESCRIPTION,
-  SELECT_ONE_DROPDOWN,
-  SLUG_DESCRIPTION,
-} from '@/constants/descriptions'
+import {MAX_CHAR_COUNT_DESCRIPTION, SELECT_ONE_DROPDOWN, SLUG_DESCRIPTION} from '@/constants'
 import {CustomOptions} from '@/types/fields'
 import {isAdministrator} from '@/utils'
 

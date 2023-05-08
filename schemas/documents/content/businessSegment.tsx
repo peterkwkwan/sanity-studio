@@ -1,6 +1,6 @@
 import {defineType, defineField} from 'sanity'
 import {HiUserGroup} from 'react-icons/hi'
-import {MAX_CHAR_COUNT_DESCRIPTION} from '@/constants/descriptions'
+import {MAX_CHAR_COUNT_DESCRIPTION} from '@/constants'
 import {CustomOptions} from '@/types/fields'
 
 const minCharCount = 3

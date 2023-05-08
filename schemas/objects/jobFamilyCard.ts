@@ -1,11 +1,7 @@
 import {defineType, defineField} from 'sanity'
 import {BsFillMenuAppFill} from 'react-icons/bs'
 
-import {
-  IMAGE_SIZE_DESCRIPTION,
-  MAX_CHAR_COUNT_DESCRIPTION,
-  SLUG_DESCRIPTION,
-} from '@/constants/descriptions'
+import {IMAGE_SIZE_DESCRIPTION, MAX_CHAR_COUNT_DESCRIPTION, SLUG_DESCRIPTION} from '@/constants'
 import {isAdministrator} from '@/utils'
 import {CustomOptions} from '@/types/fields'
 
