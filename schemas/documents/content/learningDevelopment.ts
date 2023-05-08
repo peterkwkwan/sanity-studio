@@ -1,5 +1,5 @@
 import {defineType, defineField} from 'sanity'
-import {MdGroup} from 'react-icons/md'
+import {GiTeacher} from 'react-icons/gi'
 import {MAX_CHAR_COUNT_DESCRIPTION} from '@/constants/descriptions'
 import {CustomOptions} from '@/types/fields'
 
@@ -10,7 +10,7 @@ export default defineType({
   name: 'learningDevelopment',
   title: 'Learning & Development',
   type: 'document',
-  icon: MdGroup,
+  icon: GiTeacher,
   fields: [
     defineField({
       name: 'title',

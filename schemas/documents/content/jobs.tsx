@@ -16,7 +16,6 @@ export default defineType({
   name: 'jobs',
   title: 'Jobs',
   type: 'document',
-  icon: RocketIcon,
   fields: [
     defineField({
       name: 'name',
@@ -92,5 +91,41 @@ export default defineType({
         },
       ],
     }),
+    defineField({
+      name: 'jobSkills',
+      title: 'Skills',
+      type: 'array',
+      description: 'Associated skills required for this job',
+      of: [
+        {
+          type: 'jobSkills',
+          options: {
+            disableNew: true,
+          },
+        },
+      ],
+    }),
   ],
+  preview: {
+    select: {
+      title: 'name',
+      subtitle: 'level',
+      primary: 'jobFamilyGroup.color',
+    },
+    prepare({title, subtitle, primary}) {
+      return {
+        title,
+        subtitle: `Level: ${subtitle}`,
+        media: (
+          <span
+            style={{
+              backgroundColor: primary?.hex,
+              height: '100%',
+              width: '100%',
+            }}
+          />
+        ),
+      }
+    },
+  },
 })
