@@ -13,11 +13,15 @@ import jobFamilyGroup from './documents/content/jobFamilyGroup'
 import jobFamily from './documents/content/jobFamily'
 import businessSegment from './documents/content/businessSegment'
 import businessSegmentCompetencies from './objects/businessSegmentCompetencies'
+import learningDevelopment from './documents/content/learningDevelopment'
+import skillCategories from './documents/content/skillCategories'
 
 export const schemaTypes = [
   homePage,
   competencies,
   comptenciesPage,
+  learningDevelopment,
+  skillCategories,
   jobs,
   jobFamily,
   jobFamilyGroup,

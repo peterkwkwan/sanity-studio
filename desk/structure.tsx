@@ -1,6 +1,7 @@
 import type {StructureResolver} from 'sanity/desk'
 import {RocketIcon, DocumentsIcon} from '@sanity/icons'
 import {FaBuilding, FaPalette, FaSuitcase, FaLayerGroup} from 'react-icons/fa'
+import {GiTeacher, GiSkills} from 'react-icons/gi'
 import {HiUserGroup} from 'react-icons/hi'
 import {MdGroup} from 'react-icons/md'
 import {BsFillMenuButtonWideFill} from 'react-icons/bs'
@@ -36,13 +37,17 @@ export const structure: StructureResolver = (S) =>
           S.list()
             .title('Content')
             .items([
-              S.documentTypeListItem('competencies').title('Competencies').icon(RocketIcon),
               S.documentTypeListItem('jobs').title('Jobs').icon(FaSuitcase),
               S.documentTypeListItem('jobFamily').title('Job Family').icon(MdGroup),
               S.documentTypeListItem('jobFamilyGroup').title('Job Family Group').icon(HiUserGroup),
               S.documentTypeListItem('businessSegment')
                 .title('Business Segment')
                 .icon(FaLayerGroup),
+              S.documentTypeListItem('competencies').title('Competencies').icon(RocketIcon),
+              S.documentTypeListItem('learningDevelopment')
+                .title('Learning & Development')
+                .icon(GiTeacher),
+              S.documentTypeListItem('skillCategories').title('Skill Categories').icon(GiSkills),
             ])
         ),
       S.listItem()
