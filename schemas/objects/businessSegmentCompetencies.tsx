@@ -2,15 +2,15 @@ import {SELECT_ONE_DROPDOWN} from '@/constants/descriptions'
 import {defineType, defineField} from 'sanity'
 
 export default defineType({
-  name: 'jobFamilyCompetencies',
-  title: 'Job Family Competencies',
+  name: 'businessSegmentCompetencies',
+  title: 'Business Segment Competencies',
   type: 'object',
   fields: [
     defineField({
-      name: 'jobFamilyGroup',
-      title: 'Job Family Group',
+      name: 'businessSegment',
+      title: 'Business Segment',
       type: 'reference',
-      to: [{type: 'jobFamilyGroup'}],
+      to: [{type: 'businessSegment'}],
       description: SELECT_ONE_DROPDOWN,
       options: {
         disableNew: true,
@@ -33,8 +33,8 @@ export default defineType({
   ],
   preview: {
     select: {
-      title: 'jobFamilyGroup.name',
-      primary: 'jobFamilyGroup.color',
+      title: 'businessSegment.name',
+      primary: 'businessSegment.color',
     },
     prepare({title, primary}) {
       return {

@@ -20,6 +20,11 @@ export default defineType({
         Rule.min(minCharCount),
         Rule.max(maxCharCount).error(MAX_CHAR_COUNT_DESCRIPTION('Competency names', maxCharCount)),
         Rule.required(),
+        // Rule.custom(async (value, context) => {
+        //   const isUnique = await useIsUniqueString(value || '', context)
+        //   if (!isUnique) return 'Title is not unique'
+        //   return true
+        // }),
       ],
       options: {
         showCount: true,

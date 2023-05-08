@@ -10,8 +10,9 @@ import jobFamilyCard from './objects/jobFamilyCard'
 import Logo from './documents/site/brand/logo'
 import jobs from './documents/content/jobs'
 import jobFamilyGroup from './documents/content/jobFamilyGroup'
-import jobFamilyCompetencies from './objects/jobFamilyCompetencies'
 import jobFamily from './documents/content/jobFamily'
+import businessSegment from './documents/content/businessSegment'
+import businessSegmentCompetencies from './objects/businessSegmentCompetencies'
 
 export const schemaTypes = [
   homePage,
@@ -20,7 +21,8 @@ export const schemaTypes = [
   jobs,
   jobFamily,
   jobFamilyGroup,
-  jobFamilyCompetencies,
+  businessSegment,
+  businessSegmentCompetencies,
   Logo,
   colors,
   menu,
