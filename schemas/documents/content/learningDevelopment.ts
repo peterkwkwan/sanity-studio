@@ -1,7 +1,7 @@
 import {defineType, defineField} from 'sanity'
-import {GiTeacher} from 'react-icons/gi'
-import {MAX_CHAR_COUNT_DESCRIPTION} from '@/constants/descriptions'
+import {MAX_CHAR_COUNT_DESCRIPTION, UNIQUE_DESCRIPTION} from '@/constants'
 import {CustomOptions} from '@/types/fields'
+import {isUniqueString} from '@/utils'
 
 const minCharCount = 3
 const maxCharCount = 40
@@ -10,7 +10,6 @@ export default defineType({
   name: 'learningDevelopment',
   title: 'Learning & Development',
   type: 'document',
-  icon: GiTeacher,
   fields: [
     defineField({
       name: 'title',
@@ -20,6 +19,16 @@ export default defineType({
         Rule.min(minCharCount),
         Rule.max(maxCharCount).error(MAX_CHAR_COUNT_DESCRIPTION('Title', maxCharCount)),
         Rule.required(),
+        Rule.custom(async (value = '', context) => {
+          const isUnique = await isUniqueString(value, context)
+          if (!isUnique)
+            return UNIQUE_DESCRIPTION({
+              fieldName: 'Title',
+              documentType: 'Learning & Development item',
+              value,
+            })
+          return true
+        }),
       ],
       options: {
         showCount: true,
