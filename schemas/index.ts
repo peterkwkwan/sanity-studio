@@ -14,7 +14,6 @@ import jobFamily from './documents/content/jobFamily'
 import businessSegment from './documents/content/businessSegment'
 import businessSegmentCompetencies from './objects/businessSegmentCompetencies'
 import learningDevelopment from './documents/content/learningDevelopment'
-import skillCategories from './documents/content/skillCategories'
 import skills from './documents/content/skills'
 import jobSkills from './objects/jobSkills'
 
@@ -24,7 +23,6 @@ export const schemaTypes = [
   comptenciesPage,
   learningDevelopment,
   skills,
-  skillCategories,
   jobSkills,
   jobs,
   jobFamily,

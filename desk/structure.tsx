@@ -5,7 +5,7 @@ import {GiTeacher, GiSkills} from 'react-icons/gi'
 import {HiUserGroup} from 'react-icons/hi'
 import {MdGroup} from 'react-icons/md'
 import {BsFillMenuButtonWideFill} from 'react-icons/bs'
-import {AiOutlineHome, AiOutlineTool} from 'react-icons/ai'
+import {AiOutlineHome} from 'react-icons/ai'
 
 export const structure: StructureResolver = (S) =>
   S.list()
@@ -44,8 +44,7 @@ export const structure: StructureResolver = (S) =>
                 .title('Business Segment')
                 .icon(FaLayerGroup),
               S.documentTypeListItem('competencies').title('Competencies').icon(RocketIcon),
-              S.documentTypeListItem('skills').title('Skills').icon(AiOutlineTool),
-              S.documentTypeListItem('skillCategories').title('Skill Categories').icon(GiSkills),
+              S.documentTypeListItem('skills').title('Skills').icon(GiSkills),
               S.documentTypeListItem('learningDevelopment')
                 .title('Learning & Development')
                 .icon(GiTeacher),

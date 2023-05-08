@@ -62,7 +62,22 @@ export default defineType({
       title: 'Job level',
       type: 'number',
       description: 'Level of the job - should be a number',
-      placeholder: 'E.g. 38',
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: 'levelling',
+      title: 'Job leveling',
+      type: 'string',
+      description: SELECT_ONE_DROPDOWN,
+      options: {
+        list: [
+          {title: 'Developing', value: 'Developing'},
+          {title: 'Supporting', value: 'Supporting'},
+          {title: 'Applying', value: 'Applying'},
+          {title: 'Leading', value: 'Leading'},
+          {title: 'Shaping', value: 'Shaping'},
+        ],
+      },
       validation: (Rule) => Rule.required(),
     }),
     defineField({
