@@ -39,6 +39,11 @@ export default defineType({
       title: 'Color',
       type: 'color',
     }),
+    defineField({
+      name: 'secondaryColor',
+      title: 'Secondary Color',
+      type: 'color',
+    }),
   ],
   preview: {
     select: {

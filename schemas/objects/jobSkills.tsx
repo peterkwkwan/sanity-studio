@@ -9,7 +9,7 @@ export default defineType({
   icon: GiSkills,
   fields: [
     defineField({
-      name: 'skillCategories',
+      name: 'skillCategory',
       title: 'Skill Category',
       type: 'string',
       description: SELECT_ONE_DROPDOWN,
@@ -30,9 +30,6 @@ export default defineType({
         {
           type: 'reference',
           to: [{type: 'skills'}],
-          options: {
-            disableNew: true,
-          },
         },
       ],
     }),

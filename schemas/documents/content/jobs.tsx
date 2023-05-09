@@ -41,6 +41,7 @@ export default defineType({
       options: {
         disableNew: true,
       },
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'jobFamily',
@@ -48,6 +49,17 @@ export default defineType({
       type: 'reference',
       to: [{type: 'jobFamily'}],
       description: SELECT_ONE_DROPDOWN,
+      options: {
+        disableNew: true,
+      },
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: 'potentialMovement',
+      title: 'Potential Movement',
+      type: 'reference',
+      to: [{type: 'jobs'}],
+      description: 'The next potential job in this career track (if any)',
       options: {
         disableNew: true,
       },
@@ -80,6 +92,7 @@ export default defineType({
       title: 'Description',
       type: 'array',
       of: [{type: 'block'}],
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'kpi',
@@ -91,7 +104,7 @@ export default defineType({
       name: 'jobCompetencies',
       title: 'Competencies',
       type: 'array',
-      description: 'Competencies for this job',
+      description: 'Competencies for this job grouped by business segment',
       of: [
         {
           type: 'businessSegmentCompetencies',
@@ -105,7 +118,7 @@ export default defineType({
       name: 'jobSkills',
       title: 'Skills',
       type: 'array',
-      description: 'Associated skills required for this job',
+      description: 'Associated skills required for this job grouped by skill category',
       of: [
         {
           type: 'jobSkills',
@@ -125,7 +138,7 @@ export default defineType({
     prepare({title, subtitle, primary}) {
       return {
         title,
-        subtitle: `Level: ${subtitle}`,
+        subtitle: `Level: ${subtitle ?? '--'}`,
         media: (
           <span
             style={{

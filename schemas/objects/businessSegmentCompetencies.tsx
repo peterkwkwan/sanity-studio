@@ -24,9 +24,6 @@ export default defineType({
         {
           type: 'reference',
           to: [{type: 'competencies'}],
-          options: {
-            disableNew: true,
-          },
         },
       ],
     }),
