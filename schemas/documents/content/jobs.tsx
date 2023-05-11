@@ -128,6 +128,27 @@ export default defineType({
         },
       ],
     }),
+    defineField({
+      name: 'learningDevelopmentCategories',
+      title: 'Learning & Development categories',
+      type: 'array',
+      description: 'Learning & Development categories for this job',
+      of: [
+        {
+          type: 'string',
+          options: {
+            list: [
+              {title: 'WTW Global', value: 'WTW Global'},
+              {title: 'W&R', value: 'W&R'},
+              {title: 'WTW Leadership', value: 'WTW Leadership'},
+              {title: 'Data Analysis & Insights', value: 'Data Analysis & Insights'},
+              {title: 'RDI Tools & Tech', value: 'RDI Tools & Tech'},
+              {title: 'Other', value: 'Other'},
+            ],
+          },
+        },
+      ],
+    }),
   ],
   preview: {
     select: {

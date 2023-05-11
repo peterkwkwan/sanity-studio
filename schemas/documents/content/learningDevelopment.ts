@@ -1,5 +1,5 @@
 import {defineType, defineField} from 'sanity'
-import {MAX_CHAR_COUNT_DESCRIPTION, UNIQUE_DESCRIPTION} from '@/constants'
+import {MAX_CHAR_COUNT_DESCRIPTION, SELECT_ONE_DROPDOWN, UNIQUE_DESCRIPTION} from '@/constants'
 import {CustomOptions} from '@/types/fields'
 import {isUniqueString} from '@/utils'
 
@@ -38,6 +38,23 @@ export default defineType({
       name: 'href',
       title: 'URL',
       type: 'string',
+    }),
+    defineField({
+      name: 'category',
+      title: 'Catgegory',
+      type: 'string',
+      description: SELECT_ONE_DROPDOWN,
+      options: {
+        list: [
+          {title: 'WTW Global', value: 'WTW Global'},
+          {title: 'W&R', value: 'W&R'},
+          {title: 'WTW Leadership', value: 'WTW Leadership'},
+          {title: 'Data Analysis & Insights', value: 'Data Analysis & Insights'},
+          {title: 'RDI Tools & Tech', value: 'RDI Tools & Tech'},
+          {title: 'Other', value: 'Other'},
+        ],
+      },
+      validation: (Rule) => Rule.required(),
     }),
   ],
 })

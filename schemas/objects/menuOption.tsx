@@ -44,5 +44,13 @@ export default defineType({
         modal: {type: 'popover', width: 80},
       },
     }),
+    defineField({
+      name: 'hasDivider',
+      title: 'Add a Divider',
+      description:
+        'Optional. Adding a divider will render a separator element on top of this menu option.',
+      type: 'boolean',
+      initialValue: false,
+    }),
   ],
 })
