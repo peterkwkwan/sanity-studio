@@ -1,5 +1,6 @@
 import {homePage} from './documents/pages/home'
 import {comptenciesPage} from './documents/pages/w-r-competencies'
+import {skillsPage} from './documents/pages/skills'
 import competencies from './documents/content/competencies'
 
 import colors from './documents/site/brand/colors'
@@ -16,11 +17,13 @@ import businessSegmentCompetencies from './objects/businessSegmentCompetencies'
 import learningDevelopment from './documents/content/learningDevelopment'
 import skills from './documents/content/skills'
 import jobSkills from './objects/jobSkills'
+import titleWithDescription from './objects/titleWithDescription'
 
 export const schemaTypes = [
   homePage,
   competencies,
   comptenciesPage,
+  skillsPage,
   learningDevelopment,
   skills,
   jobSkills,
@@ -33,6 +36,7 @@ export const schemaTypes = [
   colors,
   menu,
   menuOption,
+  titleWithDescription,
   submenuOption,
   jobFamilyCard,
 ]

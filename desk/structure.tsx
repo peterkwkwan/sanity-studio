@@ -60,6 +60,7 @@ export const structure: StructureResolver = (S) =>
               S.documentTypeListItem('competenciesPage')
                 .title('Competencies Page')
                 .icon(DocumentsIcon),
+              S.documentTypeListItem('skillsPage').title('Skills Page').icon(DocumentsIcon),
             ])
         ),
     ])
