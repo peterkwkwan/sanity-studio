@@ -18,6 +18,8 @@ Please use a ${width}px (width) x ${height}px (height) image for best results.`
 
 export const SELECT_ONE_DROPDOWN = `Select one option from the dropdown list`
 
+export const SELECT_MULTIPLE_DROPDOWN = `Add one or more options using the dropdown list`
+
 export const UNIQUE_DESCRIPTION = ({
   fieldName,
   documentType,

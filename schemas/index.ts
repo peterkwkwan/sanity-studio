@@ -18,13 +18,17 @@ import learningDevelopment from './documents/content/learningDevelopment'
 import skills from './documents/content/skills'
 import jobSkills from './objects/jobSkills'
 import titleWithDescription from './objects/titleWithDescription'
+import practiceSkills from './documents/content/practiceSkills'
+import {careerFramework} from './documents/pages/career-framework'
 
 export const schemaTypes = [
   homePage,
   competencies,
   comptenciesPage,
   skillsPage,
+  careerFramework,
   learningDevelopment,
+  practiceSkills,
   skills,
   jobSkills,
   jobs,

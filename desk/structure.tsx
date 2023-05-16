@@ -4,6 +4,7 @@ import {FaBuilding, FaPalette, FaSuitcase, FaLayerGroup} from 'react-icons/fa'
 import {GiTeacher, GiSkills} from 'react-icons/gi'
 import {HiUserGroup} from 'react-icons/hi'
 import {MdGroup} from 'react-icons/md'
+import {TbStairsUp} from 'react-icons/tb'
 import {BsFillMenuButtonWideFill} from 'react-icons/bs'
 import {AiOutlineHome} from 'react-icons/ai'
 
@@ -44,10 +45,11 @@ export const structure: StructureResolver = (S) =>
                 .title('Business Segment')
                 .icon(FaLayerGroup),
               S.documentTypeListItem('competencies').title('Competencies').icon(RocketIcon),
-              S.documentTypeListItem('skills').title('Skills').icon(GiSkills),
+              S.documentTypeListItem('skills').title('Job Skills').icon(GiSkills),
               S.documentTypeListItem('learningDevelopment')
                 .title('Learning & Development')
                 .icon(GiTeacher),
+              S.documentTypeListItem('practiceSkills').title('Practice Skills').icon(TbStairsUp),
             ])
         ),
       S.listItem()
@@ -61,6 +63,9 @@ export const structure: StructureResolver = (S) =>
                 .title('Competencies Page')
                 .icon(DocumentsIcon),
               S.documentTypeListItem('skillsPage').title('Skills Page').icon(DocumentsIcon),
+              S.documentTypeListItem('careerFramework')
+                .title('Career Framework')
+                .icon(DocumentsIcon),
             ])
         ),
     ])

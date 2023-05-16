@@ -41,7 +41,7 @@ export default defineType({
     }),
     defineField({
       name: 'category',
-      title: 'Catgegory',
+      title: 'Category',
       type: 'string',
       description: SELECT_ONE_DROPDOWN,
       options: {
