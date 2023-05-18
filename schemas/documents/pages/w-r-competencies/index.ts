@@ -33,10 +33,10 @@ export const comptenciesPage = defineType({
       validation: (Rule) => [Rule.required()],
     }),
     defineField({
-      name: 'businessSegmentCompetencies',
-      title: 'Business Segment Competencies',
+      name: 'competencies',
+      title: 'Competencies',
       type: 'array',
-      of: [{type: 'businessSegmentCompetencies'}],
+      of: [{type: 'reference', to: [{type: 'competencies'}]}],
     }),
   ],
 })

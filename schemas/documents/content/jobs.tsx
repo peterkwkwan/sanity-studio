@@ -104,10 +104,11 @@ export default defineType({
       name: 'jobCompetencies',
       title: 'Competencies',
       type: 'array',
-      description: 'Competencies for this job grouped by business segment',
+      description: 'Competencies for this job',
       of: [
         {
-          type: 'businessSegmentCompetencies',
+          type: 'reference',
+          to: [{type: 'competencies'}],
           options: {
             disableNew: true,
           },

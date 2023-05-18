@@ -45,11 +45,11 @@ export const structure: StructureResolver = (S) =>
                 .title('Business Segment')
                 .icon(FaLayerGroup),
               S.documentTypeListItem('competencies').title('Competencies').icon(RocketIcon),
+              S.documentTypeListItem('practiceSkills').title('Practice Skills').icon(TbStairsUp),
               S.documentTypeListItem('skills').title('Job Skills').icon(GiSkills),
               S.documentTypeListItem('learningDevelopment')
                 .title('Learning & Development')
                 .icon(GiTeacher),
-              S.documentTypeListItem('practiceSkills').title('Practice Skills').icon(TbStairsUp),
             ])
         ),
       S.listItem()
@@ -59,10 +59,37 @@ export const structure: StructureResolver = (S) =>
             .title('Pages')
             .items([
               S.documentTypeListItem('homePage').title('Home').icon(AiOutlineHome),
-              S.documentTypeListItem('competenciesPage')
+
+              // Competencies
+              S.listItem()
                 .title('Competencies Page')
-                .icon(DocumentsIcon),
-              S.documentTypeListItem('skillsPage').title('Skills Page').icon(DocumentsIcon),
+                .child(
+                  S.list()
+                    .title('Competencies Page')
+                    .items([
+                      S.documentTypeListItem('competenciesPage')
+                        .title('Competencies Page')
+                        .icon(DocumentsIcon),
+                      S.documentTypeListItem('competencies').title('Competencies').icon(RocketIcon),
+                    ])
+                ),
+
+              // Skills
+              S.listItem()
+                .title('Skills Page')
+                .child(
+                  S.list()
+                    .title('Skills Page')
+                    .items([
+                      S.documentTypeListItem('skillsPage')
+                        .title('Page Content')
+                        .icon(DocumentsIcon),
+                      S.documentTypeListItem('practiceSkills')
+                        .title('Practice Skills')
+                        .icon(TbStairsUp),
+                    ])
+                ),
+
               S.documentTypeListItem('careerFramework')
                 .title('Career Framework')
                 .icon(DocumentsIcon),

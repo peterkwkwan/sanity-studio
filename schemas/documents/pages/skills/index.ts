@@ -46,4 +46,11 @@ export const skillsPage = defineType({
       validation: (Rule) => [Rule.required()],
     }),
   ],
+  preview: {
+    prepare() {
+      return {
+        title: 'Content',
+      }
+    },
+  },
 })

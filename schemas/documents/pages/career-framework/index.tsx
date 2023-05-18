@@ -18,7 +18,6 @@ export const careerFramework = defineType({
       validation: (Rule) => [
         Rule.min(minCharCount),
         Rule.max(maxCharCount).error(MAX_CHAR_COUNT_DESCRIPTION('Page title', maxCharCount)),
-
         Rule.required(),
       ],
       options: {
@@ -36,6 +35,13 @@ export const careerFramework = defineType({
       },
       validation: (Rule) => Rule.required(),
     }),
+    defineField({
+      name: 'description',
+      title: 'Description',
+      type: 'array',
+      description: 'Optional. Places a description below the page title.',
+      of: [{type: 'block'}],
+    }),
     {
       name: 'careerMapSvg',
       title: 'Career Map SVG',
@@ -43,16 +49,33 @@ export const careerFramework = defineType({
       description: 'Copy & paste the SVG as plain text into this field',
       validation: (Rule) => Rule.required().min(2),
     },
+    {
+      name: 'careerMapPdf',
+      title: 'Career Map PDF',
+      description: 'The Career Map PDF file for users to download',
+      type: 'file',
+      validation: (Rule) => Rule.required(),
+    },
   ],
   preview: {
     select: {
       title: 'pageTitle',
       subtitle: 'jobFamilyGroup.name',
+      primary: 'jobFamilyGroup.color',
     },
-    prepare({title, subtitle}) {
+    prepare({title, subtitle, primary}) {
       return {
         title,
         subtitle,
+        media: (
+          <span
+            style={{
+              backgroundColor: primary?.hex,
+              height: '100%',
+              width: '100%',
+            }}
+          />
+        ),
       }
     },
   },
