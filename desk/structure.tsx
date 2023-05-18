@@ -11,7 +11,7 @@ import {AiOutlineHome} from 'react-icons/ai'
 export const structure: StructureResolver = (S) =>
   S.list()
     .id('root')
-    .title('Content')
+    .title('Home')
     .items([
       S.listItem()
         .title('Content')
@@ -35,7 +35,7 @@ export const structure: StructureResolver = (S) =>
           S.list()
             .title('Pages')
             .items([
-              S.documentTypeListItem('homePage').title('Home').icon(AiOutlineHome),
+              S.documentTypeListItem('homePage').title('Home Page').icon(AiOutlineHome),
 
               // Competencies
               S.listItem()
@@ -58,9 +58,7 @@ export const structure: StructureResolver = (S) =>
                   S.list()
                     .title('Skills Page')
                     .items([
-                      S.documentTypeListItem('skillsPage')
-                        .title('Page Content')
-                        .icon(DocumentsIcon),
+                      S.documentTypeListItem('skillsPage').title('Skills Page').icon(DocumentsIcon),
                       S.documentTypeListItem('practiceSkills')
                         .title('Practice Skills')
                         .icon(TbStairsUp),
