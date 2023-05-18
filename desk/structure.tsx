@@ -14,36 +14,13 @@ export const structure: StructureResolver = (S) =>
     .title('Content')
     .items([
       S.listItem()
-        .title('Site Settings')
-        .child(
-          S.list()
-            .title('Settings')
-            .items([
-              S.listItem()
-                .title('Brand')
-                .child(
-                  S.list()
-                    .title('Brand assets')
-                    .items([
-                      S.documentTypeListItem('brandLogo').title('Brand Logo').icon(FaBuilding),
-                      S.documentTypeListItem('brandColors').title('Colors').icon(FaPalette),
-                    ])
-                ),
-              S.documentTypeListItem('menu').title('Menu').icon(BsFillMenuButtonWideFill),
-            ])
-        ),
-      S.listItem()
         .title('Content')
         .child(
           S.list()
             .title('Content')
             .items([
               S.documentTypeListItem('jobs').title('Jobs').icon(FaSuitcase),
-              S.documentTypeListItem('jobFamily').title('Job Family').icon(MdGroup),
-              S.documentTypeListItem('jobFamilyGroup').title('Job Family Group').icon(HiUserGroup),
-              S.documentTypeListItem('businessSegment')
-                .title('Business Segment')
-                .icon(FaLayerGroup),
+
               S.documentTypeListItem('competencies').title('Competencies').icon(RocketIcon),
               S.documentTypeListItem('practiceSkills').title('Practice Skills').icon(TbStairsUp),
               S.documentTypeListItem('skills').title('Job Skills').icon(GiSkills),
@@ -93,6 +70,38 @@ export const structure: StructureResolver = (S) =>
               S.documentTypeListItem('careerFramework')
                 .title('Career Framework')
                 .icon(DocumentsIcon),
+            ])
+        ),
+      S.listItem()
+        .title('Site Settings')
+        .child(
+          S.list()
+            .title('Settings')
+            .items([
+              S.listItem()
+                .title('Brand')
+                .child(
+                  S.list()
+                    .title('Brand assets')
+                    .items([
+                      S.documentTypeListItem('brandLogo').title('Brand Logo').icon(FaBuilding),
+                      S.documentTypeListItem('brandColors').title('Colors').icon(FaPalette),
+                    ])
+                ),
+              S.documentTypeListItem('menu').title('Menu').icon(BsFillMenuButtonWideFill),
+            ])
+        ),
+      S.listItem()
+        .title('Career Categories')
+        .child(
+          S.list()
+            .title('Career Categories')
+            .items([
+              S.documentTypeListItem('jobFamily').title('Job Family').icon(MdGroup),
+              S.documentTypeListItem('jobFamilyGroup').title('Job Family Group').icon(HiUserGroup),
+              S.documentTypeListItem('businessSegment')
+                .title('Business Segment')
+                .icon(FaLayerGroup),
             ])
         ),
     ])
