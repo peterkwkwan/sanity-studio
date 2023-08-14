@@ -1,8 +1,7 @@
 import {defineType, defineField} from 'sanity'
 import {RocketIcon} from '@sanity/icons'
-import {MAX_CHAR_COUNT_DESCRIPTION, SELECT_ONE_DROPDOWN, UNIQUE_DESCRIPTION} from '@/constants'
+import {MAX_CHAR_COUNT_DESCRIPTION, SELECT_ONE_DROPDOWN} from '@/constants'
 import {CustomOptions} from '@/types/fields'
-import {isUniqueString} from '@/utils'
 
 const minCharCount = 3
 const maxCharCount = 24
@@ -14,19 +13,13 @@ export default defineType({
   icon: RocketIcon,
   fields: [
     defineField({
-      name: 'title',
-      title: 'Title',
+      name: 'name',
+      title: 'Name',
       type: 'string',
       validation: (Rule) => [
         Rule.min(minCharCount),
         Rule.max(maxCharCount).error(MAX_CHAR_COUNT_DESCRIPTION('Competency names', maxCharCount)),
         Rule.required(),
-        Rule.custom(async (value = '', context) => {
-          const isUnique = await isUniqueString(value, context)
-          if (!isUnique)
-            return UNIQUE_DESCRIPTION({fieldName: 'Title', documentType: 'Competency', value})
-          return true
-        }),
       ],
       options: {
         showCount: true,
@@ -44,10 +37,15 @@ export default defineType({
       validation: (Rule) => [Rule.required()],
     }),
     defineField({
-      name: 'description',
-      title: 'Description',
+      name: 'ldOptions',
+      title: 'Learning Development Options',
       type: 'array',
-      of: [{type: 'block'}],
+      of: [{type: 'ldOptions'}],
+    }),
+    defineField({
+      name: 'definition',
+      title: 'Definition',
+      type: 'string',
       validation: (Rule) => [Rule.required()],
     }),
     defineField({
@@ -102,7 +100,7 @@ export default defineType({
   ],
   preview: {
     select: {
-      title: 'title',
+      title: 'name',
       subtitle: 'businessSegment.name',
       primary: 'businessSegment.color',
     },

@@ -19,17 +19,25 @@ import jobSkills from './objects/jobSkills'
 import titleWithDescription from './objects/titleWithDescription'
 import practiceSkills from './documents/content/practiceSkills'
 import {careerFramework} from './documents/pages/career-framework'
+import ldOptions from './objects/ldOptions'
+import rdiSkills from './documents/content/rdiSkills'
+import leadershipDevelopmentPrograms from './documents/content/leadershipDevelopmentPrograms'
+import {rdiSkillsPage} from './documents/pages/rdi-skills'
 
 export const schemaTypes = [
   homePage,
   competencies,
   comptenciesPage,
   skillsPage,
+  rdiSkillsPage,
   careerFramework,
   learningDevelopment,
+  leadershipDevelopmentPrograms,
+  ldOptions,
   practiceSkills,
   skills,
   jobSkills,
+  rdiSkills,
   jobs,
   jobFamily,
   jobFamilyGroup,
