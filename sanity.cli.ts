@@ -5,7 +5,7 @@ import path from 'path'
 export default defineCliConfig({
   api: {
     projectId: 'wdhfrvff',
-    dataset: 'production',
+    dataset: 'playground',
   },
   graphql: [
     {

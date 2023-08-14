@@ -24,8 +24,12 @@ export const structure: StructureResolver = (S) =>
               S.documentTypeListItem('competencies').title('Competencies').icon(RocketIcon),
               S.documentTypeListItem('practiceSkills').title('Practice Skills').icon(TbStairsUp),
               S.documentTypeListItem('skills').title('Job Skills').icon(GiSkills),
+              S.documentTypeListItem('rdiSkills').title('RDI Skills').icon(GiSkills),
               S.documentTypeListItem('learningDevelopment')
                 .title('Learning & Development')
+                .icon(GiTeacher),
+              S.documentTypeListItem('leadershipDevelopmentPrograms')
+                .title('Leadership Development Programs')
                 .icon(GiTeacher),
             ])
         ),
@@ -62,6 +66,10 @@ export const structure: StructureResolver = (S) =>
                       S.documentTypeListItem('practiceSkills')
                         .title('Practice Skills')
                         .icon(TbStairsUp),
+
+                      S.documentTypeListItem('rdiSkillsPage')
+                        .title('RDI Skills Page')
+                        .icon(DocumentsIcon),
                     ])
                 ),
 

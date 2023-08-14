@@ -1,6 +1,11 @@
 import {defineType, defineField} from 'sanity'
 
-import {MAX_CHAR_COUNT_DESCRIPTION, SELECT_ONE_DROPDOWN, SLUG_DESCRIPTION} from '@/constants'
+import {
+  LEVEL_OPTIONS,
+  MAX_CHAR_COUNT_DESCRIPTION,
+  SELECT_ONE_DROPDOWN,
+  SLUG_DESCRIPTION,
+} from '@/constants'
 import {CustomOptions} from '@/types/fields'
 import {isAdministrator} from '@/utils'
 
@@ -77,13 +82,7 @@ export default defineType({
       type: 'string',
       description: SELECT_ONE_DROPDOWN,
       options: {
-        list: [
-          {title: 'Developing', value: 'Developing'},
-          {title: 'Supporting', value: 'Supporting'},
-          {title: 'Applying', value: 'Applying'},
-          {title: 'Leading', value: 'Leading'},
-          {title: 'Shaping', value: 'Shaping'},
-        ],
+        list: LEVEL_OPTIONS,
       },
       validation: (Rule) => Rule.required(),
     }),

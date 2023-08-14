@@ -23,10 +23,19 @@ export const SELECT_MULTIPLE_DROPDOWN = `Add one or more options using the dropd
 export const UNIQUE_DESCRIPTION = ({
   fieldName,
   documentType,
-  value,
+  value, 
 }: {
   fieldName: string
   documentType: string
   value: string
 }) =>
   `${fieldName} must be unique. There is already another ${documentType} with the name "${value}"`
+
+export const LEVEL_OPTIONS = [
+  {title: 'Developing', value: 'Developing'},
+  {title: 'Supporting', value: 'Supporting'},
+  {title: 'Applying', value: 'Applying'},
+  {title: 'Leading', value: 'Leading'},
+  {title: 'Shaping', value: 'Shaping'},
+  {title: 'Inspiring', value: 'Inspiring'},
+]
