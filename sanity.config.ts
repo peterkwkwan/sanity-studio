@@ -18,7 +18,7 @@ export default defineConfig({
   title: 'sanity-studio-wtw',
 
   projectId: 'wdhfrvff',
-  dataset: 'production',
+  dataset: 'playground',
 
   plugins: [
     colorInput(),
